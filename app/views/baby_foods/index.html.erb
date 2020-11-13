@@ -1,0 +1,6 @@
+<h1>All Baby Foods</h1>
+
+<% @baby_foods.each do |bf| %>
+    <h2><%= bf.name%> - <%= bf.category.name %></h2>
+    <p><%= bf.description %></p>
+<% end %>
