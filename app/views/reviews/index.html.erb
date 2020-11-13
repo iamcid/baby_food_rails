@@ -1,0 +1,7 @@
+<h1>All Reviews</h1>
+
+<ul>
+<% @reviews.each do |r| %>
+    <li><%= r.thumbs_up %> - <%= r.content %></li>
+<% end %>
+</ul>

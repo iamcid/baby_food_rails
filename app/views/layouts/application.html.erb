@@ -9,10 +9,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <div>
+  <div><b>
     <%= link_to "Log Out", logout_path, method: :delete %>
     <%= link_to  "Add a new baby food", new_baby_food_path %>    
-  </div>
+  </b></div>
 
   <body>
     <%= yield %>
