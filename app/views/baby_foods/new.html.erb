@@ -1,5 +1,7 @@
 <h1>Baby Food</h1>
 
+<%= render partial: 'layouts/errors', locals: {object: @baby_food} %>
+
 <%= form_for (@baby_food) do |f| %>
     <div> 
         <%= f.label :name %>
