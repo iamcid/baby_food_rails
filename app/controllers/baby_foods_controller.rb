@@ -17,7 +17,7 @@ class BabyFoodsController < ApplicationController
     end
 
     def index
-        @baby_foods = BabyFood.all
+        @baby_foods = BabyFood.alpha
     end
 
     def show

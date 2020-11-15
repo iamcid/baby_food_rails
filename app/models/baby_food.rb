@@ -6,4 +6,8 @@ class BabyFood < ApplicationRecord
   accepts_nested_attributes_for :category
 
   validates :name, presence: true
+
+  def self.alpha
+    order(:name)
+  end
 end
