@@ -1,19 +1,30 @@
-<h1>Write a Review for <%= @review.baby_food.name %>!!!</h1>
+<% if params[:baby_food_id] %>
+    <h1>Write a Review for <%= @review.baby_food.name%>!!!</h1>
+<% else %>
+    <h1>Write a Review!!!</h1>
+<% end %>
 
 <%= render partial: 'layouts/errors', locals: {object: @review} %>
 
 <%= form_for (@review) do |f| %>
-    <div> 
-        <%= f.label :thumbs_up %>
-        <%= f.number_field :thumbs_up, min: 1, max: 5 %>
-    </div><br>
-   
-    <div>
-        <%= f.label :content %>
-        <%= f.text_area :content %>
-    </div><br>
+    <% if params[:baby_food_id] %>
+        <%= f.hidden_field :baby_food_id %>
+    <% else %>
+        <div> 
+            <%= f.label :baby_food_id %>
+            <%= f.collection_select :baby_food_id, BabyFood.all, :id, :name, include_blank: true %>
+        </div><br>
+    <% end %>
 
-    <%= f.hidden_field :baby_food_id %>
+        <div> 
+            <%= f.label :thumbs_up %>
+            <%= f.number_field :thumbs_up, min: 1, max: 5 %>
+        </div><br>
+   
+        <div>
+            <%= f.label :content %>
+            <%= f.text_area :content, size: '25x5' %>
+        </div><br>
 
     <%= f.submit %>
 <% end %>

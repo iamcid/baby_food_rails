@@ -15,7 +15,7 @@
 
     <p>Select an existing Category:</p>
     <div>
-        <%= f.collection_select :category_id, Category.all, :id, :name %>
+        <%= f.collection_select :category_id, Category.all, :id, :name, include_blank: 'Select Category' %>
     </div>
 
     <p>Or create a new Category:</p>
