@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get '/', to: 'sessions#welcome'
-
+  
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
 
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
 
   delete '/logout', to: 'sessions#destroy'
+
+  get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
 
   resources :reviews
   resources :baby_foods do

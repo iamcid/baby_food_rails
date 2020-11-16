@@ -22,4 +22,8 @@ class SessionsController < ApplicationController
         end
     end
 
+    def omniauth
+        user = User.from_omniauth(request.env['omniauth.auth'])
+    end
+
 end
