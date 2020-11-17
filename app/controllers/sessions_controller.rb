@@ -26,7 +26,6 @@ class SessionsController < ApplicationController
         user = User.create_from_omniauth(auth)
         # byebug
         if user.valid?
-            user.save
             session[:user_id] = user.id
             redirect_to user_path(user.id)
         else

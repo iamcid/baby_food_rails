@@ -1,7 +1,7 @@
 <h1>All Categories</h1>
 
-<ol>
+<ul>
 <% @categories.each do |c| %>
-    <li><%= c.name %></li>
+    <li><%= c.name %>(<%= link_to  "Edit", user_path(@user) %>)</li>
 <% end %>
-</ol>
+</ul>

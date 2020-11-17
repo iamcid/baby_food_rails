@@ -2,6 +2,6 @@
 
 <ul>
 <% @reviews.each do |r| %>
-    <li><%= link_to r.baby_food.name, review_path(r) %> : <%= r.thumbs_up %> - <%= r.content %> (<%= link_to  "Edit review", edit_review_path(r.id) %>)</li>
+    <li><%= link_to r.baby_food.name, review_path(r) %> : <%= r.thumbs_up %> - <%= r.content %> (<%= link_to  "Edit", edit_review_path(r.id) %>)</li>
 <% end %>
 </ul>
