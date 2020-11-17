@@ -1,5 +1,7 @@
 class BabyFoodsController < ApplicationController
 
+    before_action :redirect_if_not_logged_in
+
     def new
         @baby_food = BabyFood.new
         @baby_food.build_category
@@ -32,6 +34,17 @@ class BabyFoodsController < ApplicationController
         @baby_food = BabyFood.find(params[:id])
         @baby_food.update(name: params[:baby_food][:name], description: params[:baby_food][:description])
         redirect_to baby_food_path(@baby_food)
+    end
+
+    def destroy 
+        @baby_food = BabyFood.find(params[:baby_food_id])
+        review = Review.find(params[:id])
+        if current_user.id == review.user_id
+            review.destroy
+        else
+            flash[:notice] = "You can't delete that user's review!"
+        end
+            redirect_to baby_food_reviews_path(@baby_food)
     end
     
     private

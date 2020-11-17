@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+
+    before_action :redirect_if_not_logged_in
+
     def new
         if @baby_food = BabyFood.find_by_id(params[:baby_food_id])
             @review = @baby_food.reviews.build

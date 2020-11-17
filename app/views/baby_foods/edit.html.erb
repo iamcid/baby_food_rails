@@ -4,7 +4,7 @@
     <h1>Baby Food</h1>
 <% end %>
 
-
+<%= render partial: 'layouts/errors', locals: {object: @baby_food} %>
 
 <%= form_for (@baby_food) do |f| %>
     <div> 
@@ -32,3 +32,5 @@
 
     <%= f.submit %>
 <% end %>
+
+<p class="button"><%= button_to 'Delete baby food', baby_food_path(@baby_food), method: 'delete' %></p>
