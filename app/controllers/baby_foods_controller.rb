@@ -24,6 +24,16 @@ class BabyFoodsController < ApplicationController
         @baby_food = BabyFood.find_by_id(params[:id])
     end
 
+    def edit
+        @baby_food = BabyFood.find(params[:id])
+    end
+
+    def update
+        @baby_food = BabyFood.find(params[:id])
+        @baby_food.update(name: params[:baby_food][:name], description: params[:baby_food][:description])
+        redirect_to baby_food_path(@baby_food)
+    end
+    
     private
 
     def baby_food_params

@@ -1,7 +1,7 @@
 <% if params[:baby_food_id] %>
-    <h1>Write a review for <%= @review.baby_food.name%>!!!</h1>
+    <h1>Edit a Review for <%= @review.baby_food.name%>!!!</h1>
 <% else %>
-    <h1>Write a review!!!</h1>
+    <h1>Edit a Review!!!</h1>
 <% end %>
 
 <%= render partial: 'layouts/errors', locals: {object: @review} %>

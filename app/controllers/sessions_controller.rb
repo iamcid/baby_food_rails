@@ -23,7 +23,22 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
-        user = User.from_omniauth(request.env['omniauth.auth'])
+        user = User.create_from_omniauth(auth)
+        # byebug
+        if user.valid?
+            user.save
+            session[:user_id] = user.id
+            redirect_to user_path(user.id)
+        else
+            flash[:message] = "Could not log in with Google, please try again!"
+            redirect_to login_path
+        end
+    end
+
+    private
+
+    def auth
+        request.env['omniauth.auth']
     end
 
 end

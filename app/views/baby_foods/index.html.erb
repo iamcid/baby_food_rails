@@ -1,7 +1,9 @@
 <h1>All Baby Foods</h1>
 
+<ul>
 <% @baby_foods.each do |bf| %>
-    <h2><%= bf.name%> - <%= bf.category.name %></h2>
+    <h2><%= link_to bf.name, baby_food_path(bf.id) %> - <%= bf.category.name %></h2>
     <p><%= bf.description %></p>
-    <b><%= link_to  "Write a Review", new_baby_food_review_path(bf.id) %></b>
+    <b><%= link_to  "Write a Review", new_baby_food_review_path(bf.id) %> or <%= link_to  "Edit baby food", edit_baby_food_path(bf.id) %></b>
 <% end %>
+</ul>
