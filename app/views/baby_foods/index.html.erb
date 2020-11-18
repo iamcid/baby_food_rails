@@ -4,6 +4,7 @@
 <% @baby_foods.each do |bf| %>
     <li><h2><%= link_to bf.name, baby_food_path(bf.id) %> - <%= bf.category.name %></h2></li>
     <p><%= bf.description %></p>
-    <b><%= link_to  "Write a Review", new_baby_food_review_path(bf.id) %> or <%= link_to  "Edit baby food", edit_baby_food_path(bf.id) %></b>
+    <b><%= link_to  "Write a Review", new_baby_food_review_path(bf.id) if bf.user == current_user  %></b><br> 
+    <b><%= link_to  "Edit baby food", edit_baby_food_path(bf.id) if bf.user == current_user  %></b>
 <% end %>
 </ul>

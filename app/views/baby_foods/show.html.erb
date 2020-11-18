@@ -4,3 +4,6 @@
 <div>
   <p>Description: <%= @baby_food.description %></p>
 </div>
+
+<b><%= link_to  "Edit baby food", edit_baby_food_path(@baby_food) if @baby_food.user == current_user %></b><br>
+<b><%= link_to  "Delete baby food", baby_food_path(@baby_food), method: 'delete' if @baby_food.user == current_user %></b>
