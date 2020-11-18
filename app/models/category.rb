@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
     has_many :baby_foods
     
-    validates :name, uniqueness: true
+    # validates :name, presence: true
 end
