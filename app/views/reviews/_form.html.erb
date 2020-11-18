@@ -1,0 +1,26 @@
+<%= render partial: 'layouts/errors', locals: {object: @review} %>
+
+<div>
+<%= form_for (@review) do |f| %>
+    <% if params[:baby_food_id] %>
+        <%= f.hidden_field :baby_food_id %>
+    <% else %>
+        <div> 
+            <%= f.label :baby_food_id %>
+            <%= f.collection_select :baby_food_id, BabyFood.all, :id, :name, include_blank: true %>
+        </div><br>
+    <% end %>
+
+        <div> 
+            <%= f.label :thumbs_up %>
+            <%= f.number_field :thumbs_up, min: 1, max: 5 %>
+        </div><br>
+   
+        <div>
+            <%= f.label :content %>
+            <%= f.text_area :content, size: '25x5' %>
+        </div><br>
+
+    <%= f.submit %>
+<% end %>
+</div>
