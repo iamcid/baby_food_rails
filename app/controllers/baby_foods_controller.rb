@@ -27,13 +27,15 @@ class BabyFoodsController < ApplicationController
     end
 
     def edit
-        @baby_food = BabyFood.find(params[:id])
+        # @baby_food = BabyFood.find(params[:id])
     end
 
     def update
-        @baby_food = BabyFood.find(params[:id])
-        @baby_food.update(name: params[:baby_food][:name], description: params[:baby_food][:description])
-        redirect_to baby_food_path(@baby_food)
+        if @baby_food.update(baby_food_params)
+            redirect_to baby_food_path(@baby_food)
+        else
+            render :edit
+        end
     end
 
     def destroy 

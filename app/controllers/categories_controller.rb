@@ -11,8 +11,9 @@ class CategoriesController < ApplicationController
     end
 
     def destroy 
-        @category= Category.find(params[:id])
-        @category.destroy
+        @baby_food = BabyFood.find_by(params[:baby_food_id])
+        category = Category.find_by(params[:category_id])
+        category.destroy
         redirect_to categories_path
     end
 end
