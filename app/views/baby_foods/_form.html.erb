@@ -1,5 +1,5 @@
 <%= render partial: 'layouts/errors', locals: {object: @baby_food} %>
-
+<div>
 <%= form_for (@baby_food) do |f| %>
     <div> 
         <%= f.label :name %>
@@ -26,3 +26,4 @@
 
     <%= f.submit %>
 <% end %>
+</div>

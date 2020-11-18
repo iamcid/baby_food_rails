@@ -4,6 +4,7 @@
     <%= flash[:message] if flash[:message] %>
 </p>
 
+<div>
 <%= form_for(:user) do |f| %>
     <%= f.label :username %>
     <%= f.text_field :username %><br><br>
@@ -13,6 +14,7 @@
 
     <%= f.submit "Log In" %>
 <% end %>
+</div>
 
 <h3>or</h3> 
 

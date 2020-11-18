@@ -10,7 +10,9 @@ class CategoriesController < ApplicationController
         @category = Category.new
     end
 
-    def edit
-        @category = Category.find(params[:id])
+    def destroy 
+        @category= Category.find(params[:id])
+        @category.destroy
+        redirect_to categories_path
     end
 end

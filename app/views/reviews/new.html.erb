@@ -1,11 +1,9 @@
-<% if params[:baby_food_id] %>
-    <h1>Write a review for <%= @review.baby_food.name%>!!!</h1>
-<% else %>
-    <h1>Write a review!!!</h1>
-<% end %>
+<h1>Write a review!!!</h1>
+
 
 <%= render partial: 'layouts/errors', locals: {object: @review} %>
 
+<div>
 <%= form_for (@review) do |f| %>
     <% if params[:baby_food_id] %>
         <%= f.hidden_field :baby_food_id %>
@@ -28,3 +26,4 @@
 
     <%= f.submit %>
 <% end %>
+</div>

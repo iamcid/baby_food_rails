@@ -7,6 +7,28 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      h1 {
+        text-align: center;
+        text-decoration-line: underline;        
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      h3 {
+        text-align: center;
+      }
+
+      div {
+        text-align: center;
+      }
+
+      p { 
+        text-align: center;
+      }
+    </style>
   </head>
 
   <div><b>
@@ -14,7 +36,7 @@
   </b></div>
 
   <body>
-    <center><u><h1>Baby Food Tracker</h1></u></center>
+    <h1>Baby Food Tracker</h1>
     <%= yield %>
   </body>
 </html>
