@@ -23,7 +23,7 @@ class BabyFoodsController < ApplicationController
     end
 
     def show
-        @baby_food = BabyFood.find_by_id(params[:id])
+        # @baby_food = BabyFood.find_by_id(params[:id])
     end
 
     def edit
