@@ -1,7 +1,7 @@
-<h1>All Categories</h1>
+<h1>All categories</h1>
 
 <ul>
 <% @categories.each do |c| %>
-    <li><%= c.name %> - <%= link_to  "Edit", edit_category_path(c.id) %></li>
+    <li><%= c.name %> - <%= link_to  "Delete category", category_path(c), method: 'delete'%></li>
 <% end %>
 </ul>
