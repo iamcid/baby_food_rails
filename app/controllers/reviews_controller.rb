@@ -41,6 +41,13 @@ class ReviewsController < ApplicationController
         redirect_to review_path(@review)
     end
 
+    def destroy 
+        @baby_food = BabyFood.find_by(params[:baby_food_id])
+        review = Review.find(params[:id])
+        review.destroy
+        redirect_to baby_food_reviews_path(@baby_food)
+    end
+
     private
 
     def review_params
