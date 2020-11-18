@@ -14,11 +14,11 @@ Rails.application.routes.draw do
 
   resources :reviews
   resources :baby_foods do
-    resources :reviews, only: [:new, :index]
+    resources :reviews
   end
   resources :categories
   resources :users do
-    resources :baby_foods 
+    resources :baby_foods, :reviews
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
