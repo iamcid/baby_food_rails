@@ -1,8 +1,6 @@
-<center><h1>Welcome <%= @user.username %>!!!</h1></center>
+<h1>Welcome <%= @user.username %>!!!</h1>
 
-
-
-<center><h3>~ <%= link_to  "Your baby's foods", user_baby_foods_path(@user.id) %> ~</h3></center>
+<h3>~ <%= link_to  "Your baby's foods", user_baby_foods_path(@user.id) %> ~</h3>
 
 <h3>Reviewed baby foods by <%=@user.username %>:</h3>
 <div><ul>
@@ -11,4 +9,4 @@
   <% end %>
 </ul></div>
 
-<center><h3>~ <%= link_to  "Your reviews", user_reviews_path(current_user) %> ~</h3></center>
+<h3>~ <%= link_to  "Your reviews", user_reviews_path(current_user) %> ~</h3>
